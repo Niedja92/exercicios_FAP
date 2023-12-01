@@ -1,0 +1,129 @@
+<!-- Com base no que estudamos, escolha dois objetos materiais e dois abstratos. Em seguida, faça uma lista com, pelo menos, três atributos e três métodos para cada tipo de objeto. Para finalizar, demonstre esses objetos em JavaScript e exemplifique as suas características e ações. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 01 - POO</title>
+    <script>
+
+        // Carro
+
+        const carro = {
+            marca : "Chevrolet",
+            modelo: "Onix Plus",
+            cor: "Branco",
+        }
+
+        //Atributos carro
+
+        function ligarCarro() {
+            console.log("O carro ligou!");
+        }
+
+        function desligarCarro() {
+            console.log("O carro desligou!");
+        }
+
+        function acelerarCarro() {
+            console.log("O carro acelerou!");
+        }
+        
+        console.log(carro.marca, carro.modelo, carro.cor)
+        console.log(ligarCarro())
+        console.log(desligarCarro())
+        console.log(acelerarCarro())
+
+        //----------------------------------------------------------------//
+
+        // Telefone
+
+        const smartphone = {
+            marca : "Samsung",
+            modelo: "S23 Ultra",
+            valor: "7.599,00",
+        }
+
+        //Atributos smartphone
+
+        function ligarTelefone() {
+            console.log("O telefone ligou!");
+        }
+
+        function desligarTelefone() {
+            console.log("O telefone desligou!");
+        }
+
+        function atualizarTelefone() {
+            console.log("O telefone atualizou!");
+        }
+        
+        console.log(smartphone.marca, smartphone.modelo, smartphone.valor)
+        console.log(ligarTelefone())
+        console.log(desligarTelefone())
+        console.log(atualizarTelefone())
+
+        //----------------------------------------------------------------//
+
+        // Animal
+
+        const animal = {
+            especie : "Cachorro",
+            idade: "3 anos",
+            genero: "Macho",
+        }
+
+        //Atributos Animal
+
+        function alimentarAnimal() {
+            console.log("O animal foi alimentado!");
+        }
+
+        function passearComAnimal() {
+            console.log("O animal passeou!");
+        }
+
+        function brincarComAnimal() {
+            console.log("O animal brincou!");
+        }
+        
+        console.log(animal.especie, animal.idade, animal.genero)
+        console.log(alimentarAnimal())
+        console.log(passearComAnimal())
+        console.log(brincarComAnimal())
+
+        //----------------------------------------------------------------//
+
+        // Pessoa
+
+        const pessoa = {
+            nome : "Karla",
+            idade: "30 anos",
+            genero: "Feminino",
+        }
+
+        //Atributos Pessoa
+
+        function trabalharPessoa() {
+            console.log(`${pessoa.nome} foi ao trabalho!`);
+        }
+
+        function exercicioPessoa() {
+            console.log(`${pessoa.nome} praticou atividade física!`);
+        }
+
+        function dormirPessoa() {
+            console.log(`${pessoa.nome} dormiu!`);
+        }
+        
+        console.log(pessoa.nome, pessoa.idade, pessoa.genero)
+        console.log(trabalharPessoa())
+        console.log(exercicioPessoa())
+        console.log(dormirPessoa())
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
