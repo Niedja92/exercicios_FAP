@@ -1,8 +1,8 @@
-import Counter from "./Counter";
+import Counter from "../src/components/Counter";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Counter />
     </div>
   );

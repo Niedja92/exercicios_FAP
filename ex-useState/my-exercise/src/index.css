@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #1d1c1c;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contador {
+  background-color: #fff;
+  width: 30%;
+  height: 10rem;
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+button {
+  width: 3rem;
+  height: 1.7rem;
+  border-radius: 5px;
+  border: 1px solid #999;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem;
+  cursor: pointer;
+}
