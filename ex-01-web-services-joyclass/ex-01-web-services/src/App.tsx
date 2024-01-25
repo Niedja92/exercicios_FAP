@@ -1,5 +1,5 @@
 import './App.css'
-import Cast from './components/Cast'
+import Cast from './components/Players'
 
 function App() {
   
