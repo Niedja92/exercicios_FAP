@@ -16,18 +16,18 @@ function Players() {
     const [players, setPlayers] = useState<PlayersProps[]>([])
 
     // GET
-    const getPlayers = async () => {
-      await api.get('/players')
-      .then((response) => (
+    async function loadPlayers() {
+      try {
+        const response = await api.get("/players")
         setPlayers(response.data)
-      ))
+      } catch (error) {
+        console.log('Error:', error)
+        alert("Ocorreu um erro ao tentar se conectar com o servidor.")
+      }
     }
-
-    // axios.get pega os dados da api e então (then) usa a response dessa api setPlayers(response.data). O then é usado quando existe uma promise
-
     // GET
     useEffect(() => {
-    getPlayers()
+    loadPlayers()
     }, [])
 
   return (
@@ -40,13 +40,13 @@ function Players() {
             {players.map((player) => {
               return (
               <ul key={player.id}>
-                <li>{player.id}</li>
-                <li>{player.image}</li>
-                <li>{player.age}</li>
-                <li>{player.height}</li>
+                <img src={player.image}/>
+                <li>Nome: {player.name}</li>
+                <li>Idade: {player.age}</li>
+                <li>Altura: {player.height}m</li>
               </ul>
               )
-            })}
+            })}s
         </div>
         <div>
             <button>Carregar mais...</button>
