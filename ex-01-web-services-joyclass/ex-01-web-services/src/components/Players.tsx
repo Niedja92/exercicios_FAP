@@ -30,28 +30,83 @@ function Players() {
     loadPlayers()
     }, [])
 
+    //POST
+    
+   const addNewPlayer = () => {
+    const userImage = document.getElementById("userImage") as HTMLInputElement;
+    const userName = document.getElementById("userName") as HTMLInputElement;
+    const userAge = document.getElementById("userAge") as HTMLInputElement;
+    const userHeight = document.getElementById("userHeight") as HTMLInputElement;
+
+    const newPLayer = {
+      image: userImage.value,
+      name: userName.value,
+      age: userAge.value,
+      height: userHeight.value,
+    };
+
+    if (userImage.value === "" || userName.value === "" || userAge.value === "" || userHeight.value === "") {
+      alert("Confira se todos os campos estão preenchidos")
+    } else {
+      api.post('http://localhost:5555/players', newPLayer)
+      .then((response) => {
+        setPlayers([...players, response.data]);
+      })
+    }
+
+   }
+
   return (
-    <>
+    <div className='content'>
         <div className='header'>
             <h1>Elenco - Los Angeles Lakers - 2023/24</h1>
-            <img src={logo} />
+            <img className='img-header' src={logo} />
         </div>
-        <div className='content'>
-            {players.map((player) => {
-              return (
-              <ul key={player.id}>
-                <img src={player.image}/>
-                <li>Nome: {player.name}</li>
-                <li>Idade: {player.age}</li>
-                <li>Altura: {player.height}m</li>
-              </ul>
-              )
-            })}s
-        </div>
-        <div>
-            <button>Carregar mais...</button>
-        </div>
-    </>
+
+            <ul className='players'> {players.map((player) => (
+                  <li key={player.id}>
+                    <img src={player.image} />
+                    <p>Nome: {player.name}</p>
+                    <p>Idade: {player.age} anos</p>
+                    <p>Altura: {player.height}m</p>
+
+                    <div className='btn'>
+                      <button>Editar</button>
+                      <button>Excluir</button>
+                    </div>              
+                  </li>
+                ))}                
+            </ul>
+
+          <div className='btn-add'>
+            <input 
+              id='userImage'
+              type="text" 
+              placeholder='Cole o link da imagem aqui' 
+    
+            />
+            <input 
+            id='userName'
+            type="text" 
+            placeholder='Digite o nome do jogador' 
+            
+            />
+            <input 
+            id='userAge'
+            type="number" 
+            placeholder='Digite a idade do jogador' 
+            
+            />
+            <input 
+            id='userHeight'
+            type="number" 
+            placeholder='Digite a altura' 
+           
+            />
+            <button onClick={addNewPlayer}>Adicionar jogador</button>
+          </div>
+                          
+    </div>  
   )
 }
 
