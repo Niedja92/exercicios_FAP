@@ -1,13 +1,6 @@
 {
   "players": [
     {
-      "id": "1",
-      "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4397204.png&w=350&h=254",
-      "name": "Colin Castleton",
-      "age": 23,
-      "height": 2.08
-    },
-    {
       "id": "2",
       "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4432582.png&w=350&h=254",
       "name": "Max Christie",
@@ -132,13 +125,6 @@
       "name": "Christian Wood",
       "age": 28,
       "height": 2.03
-    },
-    {
-      "id": "a36c",
-      "image": "https://f.i.uol.com.br/fotografia/2023/11/28/17011813936565f7d188270_1701181393_3x2_md.jpg",
-      "name": "Lebron James 2",
-      "age": "39",
-      "height": "2.06"
     }
   ]
 }
