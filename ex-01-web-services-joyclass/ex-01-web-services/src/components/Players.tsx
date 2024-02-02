@@ -3,9 +3,10 @@ import logo from '../../public/images/logo_lakers.png'
 import './Players.css'
 import { useState, useEffect } from 'react'
 import api from '../services/api'
+import axios from 'axios';
 
 interface PlayersProps {
-  id: number;
+  id: string;
   image: string;
   name: string;
   age: number;
@@ -56,6 +57,27 @@ function Players() {
 
    }
 
+   // DELETE
+   const deletePlayer = async (id: string) => {
+    await api.delete(`http://localhost:5555/players/${id}`)
+   }
+
+   // PUT
+   const updatePlayer = async (id: string) => {
+    const updateName = document.getElementById(`updateName${id}`) as HTMLInputElement
+
+    const updatedPLayer = {
+      image: updateImage.value,
+      name: updateName.value,
+      age: updateAge.value,
+      height: updateHeight.value,
+    };
+
+    await axios.put(`http://localhost:5555/players/${id}`, updatedPLayer)
+    const newPlayer = players.filter((players: any) => players.id !== id)
+    setPlayers(newPlayer)
+   }
+
   return (
     <div className='content'>
         <div className='header'>
@@ -71,11 +93,12 @@ function Players() {
                     <p>Altura: {player.height}m</p>
 
                     <div className='btn'>
-                      <button>Editar</button>
-                      <button>Excluir</button>
+                      <button id={`updateName${player.id}`} onClick={() => updatePlayer(player.id)} >Editar</button>
+                      <button onClick={() => deletePlayer(player.id)}>Excluir</button>
                     </div>              
                   </li>
-                ))}                
+                ))}
+                                
             </ul>
 
           <div className='btn-add'>
